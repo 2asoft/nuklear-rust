@@ -2,13 +2,16 @@
 
 extern crate alloc;
 
-use super::ALIGNMENT;
-use nuklear_sys::{nk_handle, nk_size};
-
 use std::alloc::{Alloc, Global, Layout};
 use std::mem;
 use std::os::raw::c_void;
 use std::ptr::NonNull;
+
+use tracing::{debug, error, event, info, Level, span, trace, warn};
+
+use nuklear_sys::{nk_handle, nk_size};
+
+use super::ALIGNMENT;
 
 pub unsafe extern "C" fn alloc(_: nk_handle, _: *mut c_void, size: nk_size) -> *mut c_void {
     trace!("allocating {} bytes", size);

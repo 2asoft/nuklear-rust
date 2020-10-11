@@ -9,7 +9,7 @@
 #![cfg_attr(feature = "rust_allocator", feature(allocator_api))]
 
 #[macro_use]
-extern crate log;
+extern crate tracing;
 
 #[cfg(feature = "rust_allocator")]
 mod alloc_heap;

@@ -15,7 +15,7 @@ name = "nuklear"
 path = "src/lib.rs"
 
 [dependencies]
-log = "^0.4.11"
+tracing = { version = "^0.1.19" }
 
 [features]
 default = []
